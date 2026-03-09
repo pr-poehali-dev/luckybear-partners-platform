@@ -1,10 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
-type AnyString = string;
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/c7001507-fa02-4ba3-9394-115f720ab280/files/8eec50b9-973a-4de7-a146-e94200791105.jpg";
+const LOGO_IMG = "https://cdn.poehali.dev/files/f823ffec-c09b-49a0-9921-92133c91f078.png";
+const BEAR_ICON = "https://cdn.poehali.dev/files/bdeb9aa7-7cc9-45c4-82e9-cbb32456d63f.png";
+const PHONE_IMG = "https://cdn.poehali.dev/files/92c5f0ec-7a41-461a-acec-b2cb4095b5c6.png";
 const BG_IMAGE = "https://cdn.poehali.dev/projects/c7001507-fa02-4ba3-9394-115f720ab280/files/a309ec45-bc17-4207-abe5-fe5eeab3724b.jpg";
+
+const PARTNER_LINK = "https://t.me/luckybear_partners_bot";
+const PLAY_LINK = "https://lbgame777.xyz/2jguNs";
 
 const advantages = [
   { icon: "TrendingUp", text: "В 3 раза выше ретеншен по сравнению с обычным казино" },
@@ -116,19 +120,16 @@ export default function Index() {
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4"
         style={{ background: "rgba(6, 11, 18, 0.85)", backdropFilter: "blur(16px)", borderBottom: "1px solid rgba(212,160,23,0.1)" }}>
         <div className="flex items-center gap-2">
-          <span className="text-2xl animate-float">🐻</span>
-          <span className="font-oswald text-xl font-bold tracking-widest" style={{ color: "var(--lb-gold2)" }}>
-            LUCKY<span style={{ color: "#fff" }}>BEAR</span>
-          </span>
+          <img src={LOGO_IMG} alt="LuckyBear Partners" className="h-9 w-auto" />
         </div>
         <div className="hidden md:flex items-center gap-8">
           {[["#advantages","Преимущества"],["#models","Модели"],["#geo","ГЕО"],["#faq","FAQ"]].map(([href,label]) => (
             <a key={href} href={href} className="text-sm font-golos text-gray-400 hover:text-white transition-colors">{label}</a>
           ))}
         </div>
-        <button className="btn-gold px-5 py-2 rounded-lg text-sm relative z-10">
+        <a href={PARTNER_LINK} target="_blank" rel="noopener noreferrer" className="btn-gold px-5 py-2 rounded-lg text-sm relative z-10">
           Подключить
-        </button>
+        </a>
       </nav>
 
       {/* HERO */}
@@ -162,12 +163,12 @@ export default function Index() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-up stagger-3" style={{ animationFillMode: "both" }}>
-              <button className="btn-gold px-8 py-4 rounded-xl text-base relative z-10">
+              <a href={PARTNER_LINK} target="_blank" rel="noopener noreferrer" className="btn-gold px-8 py-4 rounded-xl text-base relative z-10 text-center">
                 Стать партнёром
-              </button>
-              <button className="btn-outline-gold px-8 py-4 rounded-xl text-base">
+              </a>
+              <a href={PLAY_LINK} target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-8 py-4 rounded-xl text-base text-center">
                 Играть сейчас
-              </button>
+              </a>
             </div>
 
             <div className="flex items-center gap-8 mt-10 animate-slide-up stagger-4" style={{ animationFillMode: "both" }}>
@@ -188,12 +189,14 @@ export default function Index() {
 
           <div className="flex-1 flex justify-center lg:justify-end animate-fade-scale stagger-2" style={{ animationFillMode: "both" }}>
             <div className="relative">
-              <div className="absolute inset-0 rounded-3xl glow-gold" style={{ transform: "scale(1.05)" }} />
+              <div className="absolute inset-0 rounded-3xl glow-gold" style={{ transform: "scale(1.1)" }} />
+              <div className="absolute -inset-8 rounded-full opacity-20 animate-rotate-slow"
+                style={{ background: "conic-gradient(from 0deg, transparent, var(--lb-gold2), transparent)", filter: "blur(20px)" }} />
               <img
-                src={HERO_IMAGE}
-                alt="LuckyBear Partners"
-                className="relative z-10 w-full max-w-md rounded-3xl object-cover animate-float"
-                style={{ border: "2px solid rgba(212,160,23,0.3)", maxHeight: "500px" }}
+                src={PHONE_IMG}
+                alt="LuckyBear Casino на телефоне — бонус до 360%"
+                className="relative z-10 w-full max-w-xs lg:max-w-sm object-contain animate-float"
+                style={{ filter: "drop-shadow(0 0 40px rgba(212,160,23,0.3))" }}
               />
             </div>
           </div>
@@ -441,7 +444,7 @@ export default function Index() {
           style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,160,23,0.07), transparent)" }} />
         <AnimSection>
           <div className="container mx-auto max-w-3xl text-center relative z-10">
-            <div className="text-5xl mb-6 animate-float">🐻</div>
+            <img src={BEAR_ICON} alt="LuckyBear" className="w-16 h-16 mx-auto mb-6 animate-float" />
             <h2 className="font-oswald text-4xl lg:text-6xl font-bold mb-6" style={{ color: "#fff" }}>
               Готов зарабатывать<br />
               <span className="gold-text-gradient">с LuckyBear?</span>
@@ -450,12 +453,12 @@ export default function Index() {
               Присоединяйся к тысячам партнёров и начни получать пассивный доход уже сегодня
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-gold px-10 py-4 rounded-xl text-base relative z-10">
+              <a href={PARTNER_LINK} target="_blank" rel="noopener noreferrer" className="btn-gold px-10 py-4 rounded-xl text-base relative z-10 text-center">
                 Стать партнёром
-              </button>
-              <button className="btn-outline-gold px-10 py-4 rounded-xl text-base">
+              </a>
+              <a href={PARTNER_LINK} target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-10 py-4 rounded-xl text-base text-center">
                 Написать менеджеру
-              </button>
+              </a>
             </div>
             <div className="mt-8 flex items-center justify-center gap-2 text-sm text-gray-500 font-golos">
               <Icon name="Shield" size={16} style={{ color: "var(--lb-gold2)" }} />
@@ -468,15 +471,16 @@ export default function Index() {
       {/* FOOTER */}
       <footer className="py-8 px-6" style={{ borderTop: "1px solid rgba(212,160,23,0.1)", background: "var(--lb-dark2)" }}>
         <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="text-xl">🐻</span>
-            <span className="font-oswald font-bold tracking-widest" style={{ color: "var(--lb-gold2)" }}>
-              LUCKY<span style={{ color: "#fff" }}>BEAR</span>{" "}
-              <span style={{ color: "#444" }}>PARTNERS</span>
-            </span>
+          <div className="flex items-center gap-3">
+            <img src={BEAR_ICON} alt="LuckyBear" className="h-8 w-auto" />
+            <span className="font-oswald font-bold tracking-widest text-sm" style={{ color: "#444" }}>PARTNERS</span>
           </div>
           <span className="text-xs text-gray-600 font-golos">RS 50–65% · CPA 20–100$ · GEO СНГ/БУРЖ/КРИПТА · HYBRID</span>
-          <div className="text-xs text-gray-700 font-golos">© 2024 LuckyBear Partners</div>
+          <div className="flex items-center gap-4">
+            <a href={PARTNER_LINK} target="_blank" rel="noopener noreferrer" className="text-xs font-golos transition-colors" style={{ color: "var(--lb-gold2)" }}>Стать партнёром</a>
+            <a href={PLAY_LINK} target="_blank" rel="noopener noreferrer" className="text-xs font-golos text-gray-600 hover:text-gray-400 transition-colors">Играть</a>
+            <span className="text-xs text-gray-700 font-golos">© 2025</span>
+          </div>
         </div>
       </footer>
     </div>
