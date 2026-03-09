@@ -34,14 +34,7 @@ const geos = [
   { code: "🇰🇿", name: "Казахстан", tag: "KZ" },
   { code: "🇺🇿", name: "Узбекистан", tag: "UZ" },
   { code: "🌐", name: "Бурж", tag: "БУРЖ" },
-
-];
-
-const tools = [
-  { icon: "Image", label: "Баннеры" },
-  { icon: "Layout", label: "Лендинги" },
-  { icon: "Play", label: "Видео" },
-  { icon: "Smartphone", label: "Мобильные приложения" },
+  { code: "₿", name: "Крипта", tag: "CRYPTO" },
 ];
 
 const faqItems = [
@@ -123,7 +116,7 @@ export default function Index() {
           <img src={LOGO_IMG} alt="LuckyBear Partners" className="h-9 w-auto" />
         </div>
         <div className="hidden md:flex items-center gap-8">
-          {[["#advantages","Преимущества"],["#models","Модели"],["#geo","ГЕО"],["#faq","FAQ"]].map(([href,label]) => (
+          {[["#models","Модели"],["#geo","ГЕО"],["#sub","Суб-партнёрство"],["#payouts","Выплаты"],["#promo","Акции"],["#contact","Связь"]].map(([href,label]) => (
             <a key={href} href={href} className="text-sm font-golos text-gray-400 hover:text-white transition-colors">{label}</a>
           ))}
         </div>
@@ -212,7 +205,7 @@ export default function Index() {
             {[
               { icon: "Users", val: "10 000+", label: "Инфлюенсеров" },
               { icon: "TrendingUp", val: "3×", label: "Выше ретеншен" },
-              { icon: "Globe", val: "5 ГЕО", label: "Активных регионов" },
+              { icon: "Globe", val: "СНГ/БУРЖ", label: "Активные ГЕО" },
               { icon: "Clock", val: "24/7", label: "Поддержка" },
             ].map((s) => (
               <div key={s.label} className="stat-card flex items-center gap-4 px-8 py-5">
@@ -275,9 +268,9 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {[
-              { num: "01", title: "RevShare", value: "50–65%", desc: "Получай процент от дохода платформы с каждого привлечённого игрока навсегда", badge: "Лучший выбор", active: true },
-              { num: "02", title: "CPA", value: "20–100$", desc: "Фиксированная выплата за каждого квалифицированного игрока", badge: "Скоро", active: false },
-              { num: "03", title: "Hybrid", value: "RS + CPA", desc: "Комбинированная модель: фикс + процент от дохода", badge: "Скоро", active: false },
+              { num: "01", title: "RevShare", value: "50–65%", desc: "Процент от NGR с каждого привлечённого игрока навсегда", badge: "Лучший выбор", active: true },
+              { num: "02", title: "CPA", value: "20–100$", desc: "Фиксированная выплата за каждого квалифицированного игрока", badge: "Активно", active: true },
+              { num: "03", title: "Hybrid", value: "RS + CPA", desc: "Комбинированная модель: фикс + процент от дохода", badge: "Активно", active: true },
             ].map((m, i) => (
               <AnimSection key={i}>
                 <div className="model-card p-8 cursor-pointer"
@@ -333,9 +326,9 @@ export default function Index() {
         <div className="container mx-auto max-w-4xl">
           <AnimSection>
             <div className="text-center mb-16">
-              <span className="text-xs font-oswald tracking-widest uppercase mb-3 block" style={{ color: "var(--lb-gold2)" }}>Рабочие регионы</span>
+              <span className="text-xs font-oswald tracking-widest uppercase mb-3 block" style={{ color: "var(--lb-gold2)" }}>ГЕО</span>
               <h2 className="font-oswald text-4xl lg:text-5xl font-bold" style={{ color: "#fff" }}>
-                Активные <span className="gold-text-gradient">ГЕО</span>
+                <span className="gold-text-gradient">СНГ / БУРЖ</span> — CRYPTO
               </h2>
             </div>
           </AnimSection>
@@ -357,40 +350,180 @@ export default function Index() {
 
       <div className="section-divider" />
 
-      {/* TOOLS */}
-      <section className="py-24 px-6" style={{ background: "var(--lb-dark2)" }}>
-        <div className="container mx-auto max-w-5xl">
+      {/* SUB-PARTNERSHIP */}
+      <section id="sub" className="py-24 px-6" style={{ background: "var(--lb-dark2)" }}>
+        <div className="container mx-auto max-w-4xl">
           <AnimSection>
             <div className="text-center mb-16">
-              <span className="text-xs font-oswald tracking-widest uppercase mb-3 block" style={{ color: "var(--lb-gold2)" }}>Для партнёров</span>
+              <span className="text-xs font-oswald tracking-widest uppercase mb-3 block" style={{ color: "var(--lb-gold2)" }}>Суб-партнёрство</span>
               <h2 className="font-oswald text-4xl lg:text-5xl font-bold" style={{ color: "#fff" }}>
-                Маркетинговые <span className="gold-text-gradient">инструменты</span>
+                Зарабатывай <span className="gold-text-gradient">на суб-агентах</span>
               </h2>
-              <p className="font-golos text-gray-400 mt-4 max-w-xl mx-auto">
-                Широкий выбор материалов для продвижения и конвертации трафика в клиентов
-              </p>
             </div>
           </AnimSection>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {tools.map((t, i) => (
-              <AnimSection key={i}>
-                <div className="card-dark rounded-2xl p-8 flex flex-col items-center gap-4 text-center cursor-default hover:-translate-y-2 transition-transform duration-300">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                    style={{ background: "rgba(212,160,23,0.1)", border: "1px solid rgba(212,160,23,0.2)" }}>
-                    <Icon name={t.icon} size={28} style={{ color: "var(--lb-gold2)" }} />
+          <AnimSection>
+            <div className="rounded-2xl p-8 lg:p-12 text-center"
+              style={{ background: "linear-gradient(135deg, rgba(13,21,32,0.9), rgba(17,29,46,0.9))", border: "1px solid rgba(212,160,23,0.15)" }}>
+              <div className="font-oswald text-6xl lg:text-8xl font-bold gold-text-gradient mb-4">5–10%</div>
+              <p className="font-golos text-lg text-gray-300 mb-6">от чистой прибыли привлечённых суб-агентов</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+                <div className="flex-1 rounded-xl p-5"
+                  style={{ background: "rgba(212,160,23,0.06)", border: "1px solid rgba(212,160,23,0.15)" }}>
+                  <div className="flex items-center gap-3 justify-center mb-2">
+                    <Icon name="Users" size={20} style={{ color: "var(--lb-gold2)" }} />
+                    <span className="font-oswald text-xl font-bold" style={{ color: "var(--lb-gold2)" }}>Больше объёмов</span>
                   </div>
-                  <span className="font-golos font-semibold" style={{ color: "#fff" }}>{t.label}</span>
+                  <p className="font-golos text-sm text-gray-400">Выше процент</p>
                 </div>
+                <div className="flex-1 rounded-xl p-5"
+                  style={{ background: "rgba(212,160,23,0.06)", border: "1px solid rgba(212,160,23,0.15)" }}>
+                  <div className="flex items-center gap-3 justify-center mb-2">
+                    <Icon name="TrendingUp" size={20} style={{ color: "var(--lb-gold2)" }} />
+                    <span className="font-oswald text-xl font-bold" style={{ color: "var(--lb-gold2)" }}>Пассивный доход</span>
+                  </div>
+                  <p className="font-golos text-sm text-gray-400">Без лимитов</p>
+                </div>
+              </div>
+              <p className="font-golos text-sm text-gray-500 mt-6">% зависит от объёмов приведённых суб-агентов</p>
+            </div>
+          </AnimSection>
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* PAYOUTS */}
+      <section id="payouts" className="py-24 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <AnimSection>
+            <div className="text-center mb-16">
+              <span className="text-xs font-oswald tracking-widest uppercase mb-3 block" style={{ color: "var(--lb-gold2)" }}>Выплаты</span>
+              <h2 className="font-oswald text-4xl lg:text-5xl font-bold" style={{ color: "#fff" }}>
+                Каждый <span className="gold-text-gradient">понедельник</span>
+              </h2>
+            </div>
+          </AnimSection>
+          <AnimSection>
+            <div className="rounded-2xl p-8 lg:p-12"
+              style={{ background: "linear-gradient(135deg, rgba(13,21,32,0.9), rgba(17,29,46,0.9))", border: "1px solid rgba(212,160,23,0.15)" }}>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center p-6 rounded-xl"
+                  style={{ background: "rgba(212,160,23,0.06)", border: "1px solid rgba(212,160,23,0.12)" }}>
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4"
+                    style={{ background: "rgba(212,160,23,0.12)", border: "1px solid rgba(212,160,23,0.25)" }}>
+                    <Icon name="Calendar" size={26} style={{ color: "var(--lb-gold2)" }} />
+                  </div>
+                  <h3 className="font-oswald text-xl font-bold mb-2" style={{ color: "#fff" }}>Каждый ПН</h3>
+                  <p className="font-golos text-sm text-gray-400">Стабильные еженедельные выплаты</p>
+                </div>
+                <div className="text-center p-6 rounded-xl"
+                  style={{ background: "rgba(212,160,23,0.06)", border: "1px solid rgba(212,160,23,0.12)" }}>
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4"
+                    style={{ background: "rgba(212,160,23,0.12)", border: "1px solid rgba(212,160,23,0.25)" }}>
+                    <Icon name="Gamepad2" size={26} style={{ color: "var(--lb-gold2)" }} />
+                  </div>
+                  <h3 className="font-oswald text-xl font-bold mb-2" style={{ color: "#fff" }}>На игровой баланс</h3>
+                  <p className="font-golos text-sm text-gray-400">Моментальное зачисление</p>
+                </div>
+                <div className="text-center p-6 rounded-xl"
+                  style={{ background: "rgba(212,160,23,0.06)", border: "1px solid rgba(212,160,23,0.12)" }}>
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4"
+                    style={{ background: "rgba(212,160,23,0.12)", border: "1px solid rgba(212,160,23,0.25)" }}>
+                    <Icon name="Ban" size={26} style={{ color: "var(--lb-gold2)" }} />
+                  </div>
+                  <h3 className="font-oswald text-xl font-bold mb-2" style={{ color: "#fff" }}>Без вейджера!</h3>
+                  <p className="font-golos text-sm text-gray-400">Выводите сразу без ограничений</p>
+                </div>
+              </div>
+            </div>
+          </AnimSection>
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* PROMO */}
+      <section id="promo" className="py-24 px-6" style={{ background: "var(--lb-dark2)" }}>
+        <div className="container mx-auto max-w-4xl">
+          <AnimSection>
+            <div className="text-center mb-16">
+              <span className="text-xs font-oswald tracking-widest uppercase mb-3 block" style={{ color: "var(--lb-gold2)" }}>Акции</span>
+              <h2 className="font-oswald text-4xl lg:text-5xl font-bold" style={{ color: "#fff" }}>
+                Акции для <span className="gold-text-gradient">партнёров</span>
+              </h2>
+            </div>
+          </AnimSection>
+          <AnimSection>
+            <a href="https://telegra.ph/EHksklyuzivnaya-akciya-dlya-partnerov-Vyplaty-za-pervye-depozity-02-06-2" target="_blank" rel="noopener noreferrer"
+              className="block rounded-2xl p-8 lg:p-12 group cursor-pointer transition-all duration-300 hover:-translate-y-1"
+              style={{ background: "linear-gradient(135deg, rgba(13,21,32,0.9), rgba(17,29,46,0.9))", border: "1px solid rgba(212,160,23,0.2)" }}>
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <div className="w-20 h-20 rounded-2xl flex items-center justify-center flex-shrink-0"
+                  style={{ background: "rgba(212,160,23,0.12)", border: "1px solid rgba(212,160,23,0.3)" }}>
+                  <Icon name="Gift" size={36} style={{ color: "var(--lb-gold2)" }} />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="font-oswald text-2xl font-bold mb-2" style={{ color: "#fff" }}>Выплаты за первые депозиты</h3>
+                  <p className="font-golos text-gray-400">Эксклюзивная акция для партнёров — дополнительные выплаты за первые депозиты привлечённых игроков</p>
+                </div>
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center group-hover:translate-x-1 transition-transform"
+                    style={{ background: "rgba(212,160,23,0.1)", border: "1px solid rgba(212,160,23,0.2)" }}>
+                    <Icon name="ArrowRight" size={22} style={{ color: "var(--lb-gold2)" }} />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </AnimSection>
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* CONTACT */}
+      <section id="contact" className="py-24 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <AnimSection>
+            <div className="text-center mb-16">
+              <span className="text-xs font-oswald tracking-widest uppercase mb-3 block" style={{ color: "var(--lb-gold2)" }}>Связь</span>
+              <h2 className="font-oswald text-4xl lg:text-5xl font-bold" style={{ color: "#fff" }}>
+                Связь для <span className="gold-text-gradient">сотрудничества</span>
+              </h2>
+            </div>
+          </AnimSection>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {[
+              { name: "@ecalp", link: "https://t.me/ecalp" },
+              { name: "@oyesxa", link: "https://t.me/oyesxa" },
+            ].map((m) => (
+              <AnimSection key={m.name}>
+                <a href={m.link} target="_blank" rel="noopener noreferrer"
+                  className="block rounded-2xl p-8 text-center group cursor-pointer transition-all duration-300 hover:-translate-y-1"
+                  style={{ background: "linear-gradient(135deg, rgba(13,21,32,0.9), rgba(17,29,46,0.9))", border: "1px solid rgba(212,160,23,0.15)" }}>
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"
+                    style={{ background: "rgba(212,160,23,0.1)", border: "1px solid rgba(212,160,23,0.25)" }}>
+                    <Icon name="Send" size={28} style={{ color: "var(--lb-gold2)" }} />
+                  </div>
+                  <div className="font-oswald text-2xl font-bold mb-2" style={{ color: "var(--lb-gold2)" }}>{m.name}</div>
+                  <p className="font-golos text-sm text-gray-400">Telegram</p>
+                </a>
               </AnimSection>
             ))}
           </div>
+          <AnimSection>
+            <div className="text-center mt-10">
+              <a href={PARTNER_LINK} target="_blank" rel="noopener noreferrer" className="btn-gold px-10 py-4 rounded-xl text-base relative z-10 inline-block">
+                Или подключись через бота
+              </a>
+            </div>
+          </AnimSection>
         </div>
       </section>
 
       <div className="section-divider" />
 
       {/* FAQ */}
-      <section id="faq" className="py-24 px-6">
+      <section id="faq" className="py-24 px-6" style={{ background: "var(--lb-dark2)" }}>
         <div className="container mx-auto max-w-3xl">
           <AnimSection>
             <div className="text-center mb-16">
@@ -436,38 +569,6 @@ export default function Index() {
         </div>
       </section>
 
-      <div className="section-divider" />
-
-      {/* CTA */}
-      <section className="py-24 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 z-0"
-          style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,160,23,0.07), transparent)" }} />
-        <AnimSection>
-          <div className="container mx-auto max-w-3xl text-center relative z-10">
-            <img src={BEAR_ICON} alt="LuckyBear" className="w-16 h-16 mx-auto mb-6 animate-float" />
-            <h2 className="font-oswald text-4xl lg:text-6xl font-bold mb-6" style={{ color: "#fff" }}>
-              Готов зарабатывать<br />
-              <span className="gold-text-gradient">с LuckyBear?</span>
-            </h2>
-            <p className="font-golos text-lg text-gray-400 mb-10 max-w-lg mx-auto">
-              Присоединяйся к тысячам партнёров и начни получать пассивный доход уже сегодня
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={PARTNER_LINK} target="_blank" rel="noopener noreferrer" className="btn-gold px-10 py-4 rounded-xl text-base relative z-10 text-center">
-                Стать партнёром
-              </a>
-              <a href={PARTNER_LINK} target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-10 py-4 rounded-xl text-base text-center">
-                Написать менеджеру
-              </a>
-            </div>
-            <div className="mt-8 flex items-center justify-center gap-2 text-sm text-gray-500 font-golos">
-              <Icon name="Shield" size={16} style={{ color: "var(--lb-gold2)" }} />
-              <span>Официальная партнёрская программа LuckyBear</span>
-            </div>
-          </div>
-        </AnimSection>
-      </section>
-
       {/* FOOTER */}
       <footer className="py-8 px-6" style={{ borderTop: "1px solid rgba(212,160,23,0.1)", background: "var(--lb-dark2)" }}>
         <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
@@ -475,7 +576,7 @@ export default function Index() {
             <img src={BEAR_ICON} alt="LuckyBear" className="h-8 w-auto" />
             <span className="font-oswald font-bold tracking-widest text-sm" style={{ color: "#444" }}>PARTNERS</span>
           </div>
-          <span className="text-xs text-gray-600 font-golos">RS 50–65% · CPA 20–100$ · GEO СНГ/БУРЖ/КРИПТА · HYBRID</span>
+          <span className="text-xs text-gray-600 font-golos">RS 50–65% · CPA 20–100$ · HYBRID · СНГ/БУРЖ/CRYPTO · Выплаты каждый ПН</span>
           <div className="flex items-center gap-4">
             <a href={PARTNER_LINK} target="_blank" rel="noopener noreferrer" className="text-xs font-golos transition-colors" style={{ color: "var(--lb-gold2)" }}>Стать партнёром</a>
             <a href={PLAY_LINK} target="_blank" rel="noopener noreferrer" className="text-xs font-golos text-gray-600 hover:text-gray-400 transition-colors">Играть</a>
