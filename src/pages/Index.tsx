@@ -34,7 +34,7 @@ const geos = [
   { code: "🇰🇿", name: "Казахстан", tag: "KZ" },
   { code: "🇺🇿", name: "Узбекистан", tag: "UZ" },
   { code: "🌐", name: "Бурж", tag: "БУРЖ" },
-  { code: "₿", name: "Крипта", tag: "CRYPTO" },
+
 ];
 
 const tools = [
