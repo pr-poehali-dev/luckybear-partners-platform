@@ -51,7 +51,7 @@ const faqItems = [
   },
   {
     q: "Какие ГЕО принимаются к оплате?",
-    a: "Основные ГЕО: Россия (RU), Казахстан (KZ), Узбекистан (UZ). Также принимается бурж трафик и крипта. Точный список актуальных ГЕО уточняйте у менеджера.",
+    a: "СНГ (Россия, Казахстан, Узбекистан) — оплата картами. Бурж — криптовалюта. Точный список актуальных ГЕО уточняйте у менеджера.",
   },
   {
     q: "Преимущества RevShare модели",
@@ -151,7 +151,7 @@ export default function Index() {
 
             <p className="font-golos text-lg text-gray-300 mb-8 leading-relaxed animate-slide-up stagger-2" style={{ animationFillMode: "both" }}>
               Платформа казино, рекомендуемая более чем <strong style={{ color: "var(--lb-gold2)" }}>10 000+</strong> инфлюенсерами.
-              CPA до $100. ГЕО: СНГ, Бурж, Крипта.
+              CPA до $100. СНГ — карты · Бурж — крипта.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-up stagger-3" style={{ animationFillMode: "both" }}>
@@ -204,7 +204,7 @@ export default function Index() {
             {[
               { icon: "Users", val: "10 000+", label: "Инфлюенсеров" },
               { icon: "TrendingUp", val: "3×", label: "Выше ретеншен" },
-              { icon: "Globe", val: "СНГ/БУРЖ", label: "Активные ГЕО" },
+              { icon: "Globe", val: "СНГ · Бурж", label: "Карты · Крипта" },
               { icon: "Clock", val: "24/7", label: "Поддержка" },
             ].map((s) => (
               <div key={s.label} className="stat-card flex items-center gap-4 px-8 py-5">
@@ -575,7 +575,7 @@ export default function Index() {
             <img src={BEAR_ICON} alt="LuckyBear" className="h-8 w-auto" />
             <span className="font-oswald font-bold tracking-widest text-sm" style={{ color: "#444" }}>PARTNERS</span>
           </div>
-          <span className="text-xs text-gray-600 font-golos">RS 50–65% · CPA 20–100$ · HYBRID · СНГ/БУРЖ/CRYPTO · Выплаты каждый ПН</span>
+          <span className="text-xs text-gray-600 font-golos">RS 50–65% · CPA 20–100$ · HYBRID · СНГ (карты) · Бурж (крипта) · Выплаты каждый ПН</span>
           <div className="flex items-center gap-4">
             <a href={PARTNER_LINK} target="_blank" rel="noopener noreferrer" className="text-xs font-golos transition-colors" style={{ color: "var(--lb-gold2)" }}>Стать партнёром</a>
             <a href={PLAY_LINK} target="_blank" rel="noopener noreferrer" className="text-xs font-golos text-gray-600 hover:text-gray-400 transition-colors">Играть</a>
