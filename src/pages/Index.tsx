@@ -30,11 +30,10 @@ const revsharePoints = [
 ];
 
 const geos = [
-  { code: "🇷🇺", name: "Россия", tag: "RU" },
-  { code: "🇰🇿", name: "Казахстан", tag: "KZ" },
-  { code: "🇺🇿", name: "Узбекистан", tag: "UZ" },
-  { code: "🌐", name: "Бурж", tag: "БУРЖ" },
-  { code: "₿", name: "Крипта", tag: "CRYPTO" },
+  { code: "🇷🇺", name: "Карты", tag: "RU" },
+  { code: "🇰🇿", name: "Карты", tag: "KZ" },
+  { code: "🇺🇿", name: "Карты", tag: "UZ" },
+  { code: "🌐", name: "Крипта", tag: "БУРЖ" },
 ];
 
 const faqItems = [
@@ -328,7 +327,7 @@ export default function Index() {
             <div className="text-center mb-16">
               <span className="text-xs font-oswald tracking-widest uppercase mb-3 block" style={{ color: "var(--lb-gold2)" }}>ГЕО</span>
               <h2 className="font-oswald text-4xl lg:text-5xl font-bold" style={{ color: "#fff" }}>
-                <span className="gold-text-gradient">СНГ / БУРЖ</span> — CRYPTO
+                <span className="gold-text-gradient">СНГ</span> — карты · <span className="gold-text-gradient">Бурж</span> — крипта
               </h2>
             </div>
           </AnimSection>
